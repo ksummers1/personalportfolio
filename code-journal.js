@@ -55,3 +55,12 @@ const myCar = {
     year: '1965',
     vin: '23549gklfjlkdfg'
 }
+
+// Arrow Functions
+
+// a higher order function is a function that accepts another function as a parameter.
+// filter, map and reduce are the most popular, but forEach every, find, and some are also HOFs
+
+const theFunction = () => { //multiple lines use curly braces and 'return' keyword
+    return 'I am awesome'
+}
