@@ -1,5 +1,8 @@
 import { films } from '../data/films.js'
 
-const greeting = 'Hello World!'
 
-console.log(greeting)
+console.log(films[5])
+
+let filmOne = document.querySelector('#film1')
+
+filmOne.textContent = 'First film title goes here'
