@@ -33,5 +33,25 @@ let myBool = true
 // Array
 
 let myArray = [] // this is an empty array
-
+    //          0     1       2        3     4
 let myArray2 = [42, 'Bob', myBool, ANSWER, true]
+
+let secondElement = myArray2[1] // the second position is at index #1
+
+myArray2.push('Thor') // added an element to the end of myArray2
+
+myArray2.unshift('Hello World!')
+
+let mylongString = '323404925urjoinflkajdsclmdsakfodsu043'
+
+mylongString.length
+    // Object
+
+let minObject = {}
+
+const myCar = {
+    make: 'Chevrolet',
+    color: 'Red',
+    year: '1965',
+    vin: '23549gklfjlkdfg'
+}
