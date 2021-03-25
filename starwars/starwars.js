@@ -5,4 +5,4 @@ console.log(films[5])
 
 let filmOne = document.querySelector('#film1')
 
-filmOne.textContent = 'First film title goes here'
+filmOne.textContent = films[0].title
