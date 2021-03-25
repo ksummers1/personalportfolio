@@ -1,7 +1,7 @@
 import { films } from '../data/films.js'
 
 
-console.log(films[5])
+console.log(films[6])
 
 let filmOne = document.querySelector('#film1')
 
@@ -30,3 +30,7 @@ filmFive.textContent = films[4].title
 filmSix.textContent = films[5].title
 
 filmSeven.textContent = films[6].title
+
+for (var i = 0; i < films.length; i++) {
+    console.log(films[i]);
+}
