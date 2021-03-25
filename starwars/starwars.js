@@ -19,14 +19,14 @@ let filmSeven = document.querySelector('#film7')
 
 filmOne.textContent = films[0].title
 
-filmOne.textContent = films[1].title
+filmTwo.textContent = films[1].title
 
-filmOne.textContent = films[2].title
+filmThree.textContent = films[2].title
 
-filmOne.textContent = films[3].title
+filmFour.textContent = films[3].title
 
-filmOne.textContent = films[4].title
+filmFive.textContent = films[4].title
 
-filmOne.textContent = films[5].title
+filmSix.textContent = films[5].title
 
-filmOne.textContent = films[6].title
+filmSeven.textContent = films[6].title
