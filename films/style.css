@@ -2,7 +2,11 @@ body {
     background-color: black;
 }
 
-header #filmList {
+h1 {
+    color: white;
+}
+
+#filmList {
     display: flex;
     flex-wrap: wrap;
 }
@@ -13,7 +17,6 @@ figure {
 
 figcaption {
     text-align: center;
-    display: block;
     background-color: black;
     color: white;
     margin: 0;
