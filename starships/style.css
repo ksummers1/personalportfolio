@@ -3,6 +3,15 @@
     box-sizing: border-box;
 }
 
+body {
+    background-color: black;
+    color: white;
+}
+
+nav {
+    min-width: 200px;
+}
+
 li {
     list-style-type: none;
 }
