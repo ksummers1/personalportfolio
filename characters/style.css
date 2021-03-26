@@ -1,5 +1,5 @@
     * {
-        margin: .25em;
+        margin: .5em;
         box-sizing: border-box;
     }
     
@@ -10,15 +10,15 @@
     }
     
     figure>img {
-        height: 250px;
+        height: 220px;
     }
     
     figcaption {
         text-align: center;
-        margin: 0;
     }
     
     #main {
         display: flex;
         flex-wrap: wrap;
+        margin-top: .5em;
     }
