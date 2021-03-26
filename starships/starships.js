@@ -11,8 +11,8 @@ function populateNav(starships) {
         listItem.textContent = starship.name
 
         navList.appendChild(listItem)
-        nav.appendChild(listItem)
     })
+
 }
 
 populateNav(starships)
