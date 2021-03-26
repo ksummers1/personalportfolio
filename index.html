@@ -1,77 +1,111 @@
-@ -1,76 +0,0 @@
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="styles.css" rel="stylesheet" />
-    <title>Document</title>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous" />
+    <link href="https://fonts.google.com/specimen/Roboto?preview.text_type=custom" rel="stylesheet" />
+    <link href="https://fonts.google.com/specimen/Indie+Flower?preview.text_type=custom" rel="stylesheet" />
+    <link href="style.css" rel="stylesheet" />
+
+    <title>Personal Portfolio</title>
 </head>
 
 <body>
-    <header class='centered'>
-        <img class='header-pic' src="https://learningcomponents.org/img/logo/lc_wide_wt.png" />
-    </header>
+    <nav id="navbar">
+        <ul class="navlist">
+            <li>
+                <a href="#welcome-section">About</a>
+            </li>
+            <li>
+                <a href="#projects">Projects</a>
+            </li>
+            <li>
+                <a href="#contact">Contact</a>
+            </li>
+        </ul>
+    </nav>
 
-    <main>
-        <section id="bio" class="dark">
-            <img src="https://scontent-den4-1.xx.fbcdn.net/v/t1.0-9/50140785_10218998433738700_7635628794820165632_n.jpg?_nc_cat=100&ccb=3&_nc_sid=8bfeb9&_nc_ohc=Z7uTHpsQKsAAX9oIsRy&_nc_ht=scontent-den4-1.xx&oh=01e52d4bb5d3bdf2e3eddafdd06e0393&oe=60486B64">
+    <section id="welcome-section">
+        <h1>My name is Kiki</h1>
+        <p>Welcome to My Portfolio Page!</p>
+    </section>
 
-            <div id="bio-choose">
-                <div id="namendate">
-                    <h2 style="font-family: arial" , "text-align: left;">Kiki Summers
-                        </>
-                        <span style="float: right;">01/21/2021</>
-              </div>
-              <div id= "choose">
-                <h3> I chose to learn web development because...</h3>
-                  <ul>
-                  <li>It's fun to be creative with code.</li>
-                  <li>There are a lot of jobs available.</li>
-                  <li>I love watching it all come together on websites.</li>
-                  <li>It's great working on teams.</li>
-                </ul>
-                </div>
-                  </div>
-              
-            </section>
-            <section id= "tech">
+    <section id="projects">
+        <a href="#" class="project-tile">
             <figure>
-              <img src= "https://cdn.worldvectorlogo.com/logos/nodejs-icon.svg">
-                <figcaption>I love using Javascript!</figcaption>
-              </figure>
-              <figure>
-              <img src= "https://cdn.worldvectorlogo.com/logos/angular-icon-1.svg">
-                <figcaption>I love using Angular!</figcaption>
-              </figure>
-              <figure>
-              <img src= "https://upload.wikimedia.org/wikipedia/commons/thumb/6/61/HTML5_logo_and_wordmark.svg/1200px-HTML5_logo_and_wordmark.svg.png">
-              <figcaption>I love using HTML 5!</figcaption>
-              </figure>
-              <figure>
-              <img src= "https://cdn.worldvectorlogo.com/logos/react-1.svg">
-                <figcaption>I love using React!</figcaption>
-              </figure>
-            </section>
-            <section id= "interest">
-              <h2 style="color: black;"> I am Most Excited to Learn....</h2>
-              <div id= "excited-about">
-                <h4>React</h4>
-                <p>This is what I am most excited to learn about because I am just getting back into coding.  I know it's going to make JavaScript easier to use and is going to make the whole process easier too.  I look forward to learning all I can this semester so I can use it in the field.  I used coding when I was 8 or 9 but that was back in MSDOS days and I didn't really do much with coding until Myspace days and I was able to change codes for my different backgrounds.  </p>
-               
-                
-              </div>
-              </section>
-            <footer class= "dark">
-              <p style= "color: white;"> For Educational Purposes Only </p>
-            </footer>
-            
-            
-          </main>
-         
-          
-               </header>
+                <img src="images/flower.jpg" />
+                <figcaption>
+                    <span>&ltdot; </span>Sample Caption<span> &gtdot; </span>
+                </figcaption>
+            </figure>
+        </a>
+        <a href="#" class="project-tile">
+            <figure>
+                <img src="images/flower.jpg" />
+                <figcaption>
+                    <span>&ltdot; </span>Sample Caption<span> &gtdot; </span>
+                </figcaption>
+            </figure>
+        </a>
+
+        <a href="#" class="project-tile">
+            <figure>
+                <img src="images/flower.jpg" />
+                <figcaption>
+                    <span>&ltdot; </span>Sample Caption<span> &gtdot; </span>
+                </figcaption>
+            </figure>
+        </a>
+        <a href="#" class="project-tile">
+            <figure>
+                <img src="images/flower.jpg" />
+                <figcaption>
+                    <span>&ltdot; </span>Sample Caption<span> &gtdot; </span>
+                </figcaption>
+            </figure>
+        </a>
+
+        <a href="#" class="project-tile">
+            <figure>
+                <img src="images/flower.jpg" />
+                <figcaption>
+                    <span>&ltdot; </span>Sample Caption<span> &gtdot; </span>
+                </figcaption>
+            </figure>
+        </a>
+    </section>
+    <section id="contact">
+        <div>
+            <h1>Let's Work Together...</h1>
+            <p>click the links to see my work!</p>
+        </div>
+        <div class="contact-links">
+            <a id="profile-link" href="https://github.com/ksummers1" target="_blank">
+                <i class="fab fa-github"></i> GitHub
+            </a>
+            <a id="profile-link" href="https://www.facebook.com/groups/aoscanforyou" target="_blank">
+                <i class="fab fa-facebook-square"></i> Facebook
+            </a>
+            <a id="profile-link" href="https://www.instagram.com/associateofsolexnation/" target="_blank">
+                <i class="fab fa-instagram"></i> Instagram
+            </a>
+            <a id="profile-link" href="https://email-fake.com/" target="_blank">
+                <i class="fas fa-envelope-open-text"></i> Email
+            </a>
+            <a id="profile-link" href="385-555-0189" target="_blank">
+                <i class="fas fa-mobile-alt"></i> Call
+            </a>
+        </div>
+    </section>
+
+    <footer>
+        <p>**Portfolio based on FreeCodeCamp</p>
+        <p>&copy; Kiki Summers for DGM 1600</p>
+    </footer>
+    <script src="https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js"></script>
 </body>
+
 </html>
