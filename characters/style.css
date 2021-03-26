@@ -4,11 +4,17 @@
     }
     
     body {
-        background-color: darkslateblue;
+        background-color: black;
+        color: whitesmoke;
     }
     
     figure>img {
         height: 250px;
+    }
+    
+    figcaption {
+        text-align: center;
+        margin: 0;
     }
     
     #main {

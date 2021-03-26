@@ -10,6 +10,12 @@ mainHeader.appendChild(maleButton)
 
 maleButton.addEventListener('click', () => populateDOM(maleCharacters))
 
+const femaleButton = document.createElement('button')
+femaleButton.textContent = 'Female Characters'
+mainHeader.appendChild(femaleButton)
+
+femaleButton.addEventListener('mouseover', () => populateDOM(femaleCharacters))
+
 document.body.insertBefore(mainHeader, mainElement)
 
 const maleCharacters = people.filter(person => person.gender === 'male')
@@ -42,6 +48,3 @@ function getLastNumber(url) {
 
     return url.slice(start, end)
 }
-
-
-console.log(maleCharacters)
