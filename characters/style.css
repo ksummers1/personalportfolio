@@ -1,17 +1,17 @@
-* {
-    margin: .25em;
-    box-sizing: border-box;
-}
-
-body {
-    background-color: darkslateblue;
-}
-
-figure>img {
-    height: 250px;
-}
-
-#main {
-    display: flex;
-    flex-wrap: wrap;
-}
+    * {
+        margin: .25em;
+        box-sizing: border-box;
+    }
+    
+    body {
+        background-color: darkslateblue;
+    }
+    
+    figure>img {
+        height: 250px;
+    }
+    
+    #main {
+        display: flex;
+        flex-wrap: wrap;
+    }
