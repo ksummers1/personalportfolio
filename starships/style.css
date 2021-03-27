@@ -8,10 +8,27 @@ body {
     color: white;
 }
 
+main {
+    display: flex;
+    height: 100vh;
+}
+
 nav {
-    min-width: 200px;
+    width: 400px;
+}
+
+img,
+nav {
+    position: relative;
+}
+
+a {
+    text-decoration: none;
+    color: #fff;
 }
 
 li {
     list-style-type: none;
 }
+
+footer {}
