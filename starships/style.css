@@ -6,6 +6,9 @@
 body {
     background-color: black;
     color: white;
+    position: relative;
+    min-height: 100%;
+    min-height: 100vh;
 }
 
 main {
@@ -20,6 +23,7 @@ nav {
 img,
 nav {
     position: relative;
+    z-index: 1;
 }
 
 a {
@@ -31,4 +35,10 @@ li {
     list-style-type: none;
 }
 
-footer {}
+footer {
+    position: absolute;
+    right: 0;
+    bottom: .5em;
+    left: 5em;
+    margin: -4em;
+}
