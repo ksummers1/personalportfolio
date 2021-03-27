@@ -22,11 +22,16 @@ function populateNav(starships) {
 }
 
 function populateShipView(shipData) {
-    let shipNum = 9
+    removeChildren(shipView)
+    let shipNum = getLastNumber(shipData.url)
     let shipImage = document.createElement('img')
     shipImage.src = `https://starwars-visualguide.com/assets/img/starships/${shipNum}.jpg`
+    shipImage.addEventListener('error', (err) => {
+        console.log(`Oops! Got an image loading error!`)
+    })
     shipView.appendChild(shipImage)
 }
+
 
 
 
@@ -55,5 +60,4 @@ function getRandomPosition() {
 }
 
 populateNav(starships)
-populateShipView()
 addStarField(document.querySelector('body'), 1000)
