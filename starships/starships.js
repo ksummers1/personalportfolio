@@ -33,7 +33,16 @@ function populateShipView(shipData) {
 }
 
 function addStarField(element, numStars) {
-    element.style.setProperty('background-color', '#000')
+    element.style.setProperty('background-color', 'black')
+    for (let i = 0; i < numStars; i++) {
+        let star = document.createElement('div')
+        star.style.setProperty / ('width', '2px')
+        star.style.setProperty('height', '2px')
+        star.style.setProperty('margin-top')
+        star.style.setProperty('background-color', 'white')
+        element.appendChild(star)
+
+    }
 }
 
 addStarField(document.querySelector('body'), 1000)
