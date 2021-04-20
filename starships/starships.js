@@ -9,10 +9,15 @@ const shipView = document.querySelector('.shipView')
 
 const dialog = document.querySelector('.modal')
 const closeButton = document.querySelector('.modal-close')
-dialog.classList.toggle("is-active")
+const modadldBackground = document.querySelector('.modal-background')
+
 
 closeButton.addEventListener('click', () => {
+    dialog.classList.toggle("is-active")
+})
 
+modadldBackground.addEventListener('click', () => {
+    dialog.classList.toggle("is-active")
 })
 
 function populateNav(starships) {
