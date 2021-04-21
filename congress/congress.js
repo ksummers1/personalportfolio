@@ -14,13 +14,13 @@
     })
 
     function populateCongressGrid(simplePeople) {
-        congressPeople.forEach(person => {
+        simplePeople.forEach(person => {
             let personDiv = document.createElement('div')
             let personFig = document.createElement('figure')
             let figImg = document.createElement('img')
             let figCaption = document.createElement('figcaption')
 
-            figCaption.textContent = `${person.first_name} ${person.middle_name} ${person.last_name}`
+            figCaption.textContent = `${person.name}`
 
             personFig.appendChild(figImg)
             personFig.appendChild(figCaption)
@@ -31,7 +31,7 @@
 
     function getSimplifiedCongress(congressPeople) {
         return congressPeople.map(person => {
-            let middleName = person.middleName ? `${person.middleName}` : ``
+            let middleName = person.middle_name ? `${person.middle_name}` : ``
             return {
                 id: person.id,
                 name: `${person.first_name} ${middleName} ${person.last_name}`
@@ -41,4 +41,4 @@
         })
     }
 
-    populateCongressGrid(senators)
+    populateCongressGrid(getSimplifiedCongress(senators))
