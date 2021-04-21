@@ -31,6 +31,12 @@
 
     function getSimplifiedCongress(congressPeople) {
         return congressPeople.map(person => {
+            let middleName = person.middleName ? `${person.middleName}` : ``
+            return {
+                id: person.id,
+                name: `${person.first_name} ${middleName} ${person.last_name}`
+
+            }
 
         })
     }
