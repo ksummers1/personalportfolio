@@ -1,44 +1,44 @@
-    import { senators } from '../data/senators.js'
-    import { representatives } from '../data/representatives.js'
+import { senators } from "../data/senators.js";
+import { representatives } from "../data/representatives.js";
 
-    const congressGrid = document.querySelector('.congressGrid')
-    const seniorityButton = document.querySelector('#seniorityButton')
-    const birthdayButton = document.querySelector('#birthdayButton')
+const congressGrid = document.querySelector(".congressGrid");
+const seniorityButton = document.querySelector("#seniorityButton");
+const birthdayButton = document.querySelector("#birthdayButton");
 
-    seniorityButton.addEventListener('click', () => {
-        senioritySort()
-    })
+seniorityButton.addEventListener("click", () => {
+    senioritySort();
+});
 
-    birthdayButton.addEventListener('click', () => {
-        birthdaySort()
-    })
+birthdayButton.addEventListener("click", () => {
+    birthdaySort();
+});
 
-    function populateCongressGrid(simplePeople) {
-        simplePeople.forEach(person => {
-            let personDiv = document.createElement('div')
-            let personFig = document.createElement('figure')
-            let figImg = document.createElement('img')
-            let figCaption = document.createElement('figcaption')
+function populateCongressGrid(simplePeople) {
+    simplePeople.forEach((person) => {
+        let personDiv = document.createElement("div");
+        let personFig = document.createElement("figure");
+        let figImg = document.createElement("img");
+        let figCaption = document.createElement("figcaption");
 
-            figCaption.textContent = `${person.name}`
+        figImg.src = person.imgURL
+        figCaption.textContent = `${person.name}`;
 
-            personFig.appendChild(figImg)
-            personFig.appendChild(figCaption)
-            personDiv.appendChild(personFig)
-            congressGrid.appendChild(personDiv)
-        })
-    }
+        personFig.appendChild(figImg);
+        personFig.appendChild(figCaption);
+        personDiv.appendChild(personFig);
+        congressGrid.appendChild(personDiv);
+    });
+}
 
-    function getSimplifiedCongress(congressPeople) {
-        return congressPeople.map(person => {
-            let middleName = person.middle_name ? `${person.middle_name}` : ``
-            return {
-                id: person.id,
-                name: `${person.first_name} ${middleName} ${person.last_name}`
+function getSimplifiedCongress(congressPeople) {
+    return congressPeople.map((person) => {
+        let middleName = person.middle_name ? `${person.middle_name}` : ``;
+        return {
+            id: person.id,
+            name: `${person.first_name} ${middleName} ${person.last_name}`,
+            imgURL: `https://www.govtrack.us/static/legislator-photos/${person.govtrack_id}-100px.jpeg`
+        };
+    });
+}
 
-            }
-
-        })
-    }
-
-    populateCongressGrid(getSimplifiedCongress(senators))
+populateCongressGrid(getSimplifiedCongress(senators));
