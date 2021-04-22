@@ -62,6 +62,10 @@ h1 {
     width: 8em;
 }
 
+#submitButton {
+    color: red;
+}
+
 .card__face--front {
     background: indigo;
 }
