@@ -48,6 +48,20 @@ h1 {
     box-shadow: 3px 3px 3px black;
 }
 
+.loadPokemon {
+    color: white;
+    background-color: darkslateblue;
+    height: 3em;
+    width: 8em;
+}
+
+.fetchSelectedPokemon {
+    color: white;
+    background-color: darkslateblue;
+    height: 3em;
+    width: 8em;
+}
+
 .card__face--front {
     background: indigo;
 }
