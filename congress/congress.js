@@ -37,9 +37,17 @@ function getSimplifiedCongress(congressPeople) {
         return {
             id: person.id,
             name: `${person.first_name} ${middleName} ${person.last_name}`,
-            imgURL: `https://www.govtrack.us/static/legislator-photos/${person.govtrack_id}-100px.jpeg`
+            imgURL: `https://www.govtrack.us/static/legislator-photos/${person.govtrack_id}-100px.jpeg`,
+            seniority: parseInt(person.seniority, 10)
         };
     });
 }
 
-populateCongressGrid(getSimplifiedCongress(senators));
+function senioritySort() {
+    populateCongressGrid(getSimplifiedCongress(senators).sort(
+        (a, b) => a.seniority - b.seniority
+    ).reverse())
+
+}
+
+populateCongressGrid(getSimplifiedCongress(senators))
