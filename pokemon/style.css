@@ -48,14 +48,14 @@ h1 {
     box-shadow: 3px 3px 3px black;
 }
 
-.loadPokemon {
+#loadPokemon {
     color: white;
     background-color: darkslateblue;
     height: 3em;
     width: 8em;
 }
 
-.fetchSelectedPokemon {
+#fetchPokemon {
     color: white;
     background-color: darkslateblue;
     height: 3em;
