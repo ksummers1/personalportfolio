@@ -10,6 +10,10 @@ h1 {
     -webkit-text-stroke-color: black;
 }
 
+#modal-background {
+    background-image: "images/pokeball.jpeg";
+}
+
 .pokeGrid {
     display: flex;
     flex-wrap: wrap;
