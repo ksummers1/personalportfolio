@@ -3,32 +3,16 @@ const loadButton = document.querySelector("#loadPokemon");
 const fetchButton = document.querySelector("#fetchPokemon");
 const submitButton = document.querySelector("submitButton");
 
-const dialog = document.querySelector(".modal");
-const closeButton = document.querySelector(".modal-close");
-const modalBackground = document.querySelector(".modal-background");
-
-closeButton.addEventListener("click", () => {
-    dialog.classList.toggle("is-active");
-});
-
-modalBackground.addEventListener("click", () => {
-    dialog.classList.toggle("is-active");
-});
-
 loadButton.addEventListener("click", () => {
     loadPage();
 });
 
 fetchButton.addEventListener("click", () => {
-    dialog.classList.toggle("is-active");
-    /* getAPIData(`https://pokeapi.co/api/v2/pokemon/20`).then((data) => {
-              populatePokeCard(data);
-          });*/
-});
-
-submitButton.addEventListener("click", () => {
-    const inputValue = document.querySelector(".input");
-    console.log(inputValue);
+    let pokeNameOrId = prompt("Enter Pokemon ID or Name:")
+    console.log(pokeNameOrId)
+    getAPIData(`https://pokeapi.co/api/v2/pokemon/${pokeNameOrId}`).then(
+        (data) => populatePokeCard(data)
+    );
 });
 
 async function getAPIData(url) {

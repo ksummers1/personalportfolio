@@ -44,7 +44,7 @@ h1 {
     text-align: center;
     font-weight: bold;
     backface-visibility: hidden;
-    border: 4px darkblue solid;
+    border: 6px darkblue solid;
     box-shadow: 3px 3px 3px black;
 }
 
