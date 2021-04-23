@@ -5,6 +5,7 @@ import { removeChildren } from '../utils/index.js'
 const congressGrid = document.querySelector(".congressGrid");
 const seniorityButton = document.querySelector("#seniorityButton");
 const birthdayButton = document.querySelector("#birthdayButton");
+const missedVotesButton = document.querySelector('#missedVotes')
 
 seniorityButton.addEventListener("click", () => {
     senioritySort();
@@ -14,50 +15,59 @@ birthdayButton.addEventListener("click", () => {
     birthdaySort();
 });
 
-function populateCongressGrid(simplePeople) {
-    removeChildren(congressGrid)
-    simplePeople.forEach((person) => {
-        let personDiv = document.createElement('div');
-        personDiv.className = 'figureDiv'
-        let personFig = document.createElement('figure');
-        let figImg = document.createElement('img');
-        let figCaption = document.createElement('figcaption');
+missedVotesButton.addEventListener('click', () => {
+            console.log(missedVotes)
+        }
 
-        figImg.src = person.imgURL
-        figCaption.textContent = `${person.name}`;
 
-        personFig.appendChild(figImg);
-        personFig.appendChild(figCaption);
-        personDiv.appendChild(personFig);
-        congressGrid.appendChild(personDiv);
-    });
-}
+        function populateCongressGrid(simplePeople) {
+            removeChildren(congressGrid)
+            simplePeople.forEach((person) => {
+                let personDiv = document.createElement('div');
+                personDiv.className = 'figureDiv'
+                let personFig = document.createElement('figure');
+                let figImg = document.createElement('img');
+                let figCaption = document.createElement('figcaption');
 
-function getSimplifiedCongress(congressPeople) {
-    return congressPeople.map(person => {
-        let middleName = person.middle_name ? `${person.middle_name}` : ``;
-        return {
-            id: person.id,
-            name: `${person.first_name} ${middleName} ${person.last_name}`,
-            imgURL: `https://www.govtrack.us/static/legislator-photos/${person.govtrack_id}-100px.jpeg`,
-            seniority: parseInt(person.seniority, 10),
-            date_of_birth: parseInt(person.date_of_birth, 10)
-        };
-    });
-}
+                figImg.src = person.imgURL
+                figCaption.textContent = `${person.name}`;
 
-function senioritySort() {
-    populateCongressGrid(getSimplifiedCongress(senators).sort(
-        (a, b) => a.seniority - b.seniority
-    ))
+                personFig.appendChild(figImg);
+                personFig.appendChild(figCaption);
+                personDiv.appendChild(personFig);
+                congressGrid.appendChild(personDiv);
+            });
+        }
 
-}
+        function getSimplifiedCongress(congressPeople) {
+            return congressPeople.map(person => {
+                let middleName = person.middle_name ? `${person.middle_name}` : ``;
+                return {
+                    id: person.id,
+                    name: `${person.first_name} ${middleName} ${person.last_name}`,
+                    imgURL: `https://www.govtrack.us/static/legislator-photos/${person.govtrack_id}-100px.jpeg`,
+                    seniority: parseInt(person.seniority, 10),
+                    date_of_birth: parseInt(person.date_of_birth, 10)
+                    missed_votes_pct: person.missed_votes_pct
+                };
+            });
+        }
 
-function birthdaySort() {
-    populateCongressGrid(getSimplifiedCongress(senators).sort(
-        (a, b) => a.date_of_birth - b.date_of_birth
-    ))
+        function senioritySort() {
+            populateCongressGrid(getSimplifiedCongress(senators).sort(
+                (a, b) => a.seniority - b.seniority
+            ))
 
-}
+        }
 
-populateCongressGrid(getSimplifiedCongress(senators))
+        function birthdaySort() {
+            populateCongressGrid(getSimplifiedCongress(senators).sort(
+                (a, b) => a.date_of_birth - b.date_of_birth
+            ))
+
+        }
+
+        const missedVotes = getSimplifiedCongress(representatives)
+            .reduce((acc, rep) => acc.missed_votes_pct > rep.missed_votes_pct ? acc : rep)
+
+        populateCongressGrid(getSimplifiedCongress(senators))
