@@ -16,7 +16,7 @@ closeButton.addEventListener('click', () => {
     dialog.classList.toggle("is-active")
 })
 
-modadldBackground.addEventListener('click', () => {
+modalBackground.addEventListener('click', () => {
     dialog.classList.toggle("is-active")
 })
 

@@ -10,10 +10,6 @@ h1 {
     -webkit-text-stroke-color: black;
 }
 
-#modal-background {
-    background-image: "images/pokeball.jpeg";
-}
-
 .pokeGrid {
     display: flex;
     flex-wrap: wrap;
@@ -64,10 +60,6 @@ h1 {
     background-color: darkslateblue;
     height: 3em;
     width: 8em;
-}
-
-#submitButton {
-    color: red;
 }
 
 .card__face--front {
