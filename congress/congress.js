@@ -6,7 +6,7 @@ const congressGrid = document.querySelector(".congressGrid");
 const seniorityButton = document.querySelector("#seniorityButton");
 const birthdayButton = document.querySelector("#birthdayButton");
 const missedVotesButton = document.querySelector('#missedVotes')
-const partyHackButton = document.querySelector('#partyHack')
+    //const partyHackButton = document.querySelector('#partyHack')
 
 seniorityButton.addEventListener("click", () => {
     senioritySort();
@@ -23,9 +23,8 @@ missedVotesButton.addEventListener('click', () => {
 })
 
 //partyHackButton.addEventListener('click', () => //) {
-console.log(partyHack)
-    //alert(partyHack)
-    //}
+//alert(partyHack)
+//}
 
 
 function populateCongressGrid(simplePeople) {

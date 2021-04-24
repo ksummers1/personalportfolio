@@ -1,17 +1,40 @@
 const pokeGrid = document.querySelector(".pokeGrid");
 const loadButton = document.querySelector("#loadPokemon");
 const fetchButton = document.querySelector("#fetchPokemon");
-const submitButton = document.querySelector("submitButton");
+const newButton = document.querySelector("#newPokemon");
+class Pokemon {
+    constructor(name, height, weight, abilities, moves) {
+        this.id = 900
+        this.name = name;
+        this.height = height;
+        this.weight = weight;
+        this.abilities = abilities;
+        this.moves = moves;
+    }
+}
 
-loadButton.addEventListener("click", () => {
-    loadPage();
+newButton.addEventListener("click", () => {
+    let pokeName = prompt("What is the name of your new Pokemon?");
+    let pokeHeight = prompt("What is the height of your new Pokemon?");
+    let pokeWeight = prompt("Pokemon weight?");
+    let newPokemon = new Pokemon(
+        pokeName,
+        pokeHeight,
+        pokeWeight, ["eat", "sleep"], ["study", "game"],
+    );
+    console.log(newPokemon)
+    populatePokeCard(newPokemon)
 });
+
+loadButton.addEventListener('click', () => {
+    loadPage()
+})
 
 fetchButton.addEventListener("click", () => {
     let pokeNameOrId = prompt("Enter Pokemon ID or Name:")
-    console.log(pokeNameOrId)
-    getAPIData(`https://pokeapi.co/api/v2/pokemon/${pokeNameOrId}`).then(
-        (data) => populatePokeCard(data)
+    console.log(pokeNameOrId);
+    getAPIData(`https://pokeapi.co/api/v2/pokemon/${pokeNameOrId}`).then((data) =>
+        populatePokeCard(data)
     );
 });
 
@@ -82,5 +105,8 @@ function getImageFileName(pokemon) {
     if (pokemon.id < 10) pokeId = `00${pokemon.id}`;
     if (pokemon.id > 9 && pokemon.id < 100) pokeId = `0${pokemon.id}`;
     if (pokemon.id > 99 && pokemon.id < 810) pokeId = pokemon.id;
+    if (pokemon.id === 900) {
+        return `images/pokeballs.png`
+    }
     return `https://raw.githubusercontent.com/fanzeyi/pokemon.json/master/images/${pokeId}.png`;
 }

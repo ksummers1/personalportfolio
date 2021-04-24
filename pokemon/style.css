@@ -34,6 +34,7 @@ h1 {
 
 .card.is-flipped {
     transform: rotateX(180deg);
+    border: 6px darkmagenta solid;
 }
 
 .card__face {
@@ -45,32 +46,61 @@ h1 {
     font-weight: bold;
     backface-visibility: hidden;
     border: 6px darkblue solid;
-    box-shadow: 3px 3px 3px black;
+    box-shadow: 3px 3px 3px whitesmoke;
 }
 
 #loadPokemon {
     color: white;
-    background-color: darkslateblue;
+    background-color: darkturquoise;
     height: 3em;
-    width: 8em;
+    padding: 6px;
+    text-align: center;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    border-radius: 8px;
 }
 
 #fetchPokemon {
     color: white;
-    background-color: darkslateblue;
+    background-color: darkorange;
     height: 3em;
-    width: 8em;
+    padding: 6px;
+    text-align: center;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    border-radius: 8px;
+}
+
+#newPokemon {
+    color: white;
+    background-color: darkorchid;
+    height: 3em;
+    padding: 6px;
+    text-align: center;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    border-radius: 8px;
 }
 
 .card__face--front {
     background: indigo;
+    height: 255px;
+    width: 195px;
+}
+
+.card__face--front img {
+    height: 190px;
+    width: 180px;
 }
 
 .card__face--back {
     background: navy;
     transform: rotateX(180deg);
     position: absolute;
-    top: 0;
-    left: 0;
+    height: 250px;
+    width: 195px;
     text-align: center;
 }
