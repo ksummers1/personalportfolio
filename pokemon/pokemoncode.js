@@ -2,14 +2,16 @@ const pokeGrid = document.querySelector(".pokeGrid");
 const loadButton = document.querySelector("#loadPokemon");
 const fetchButton = document.querySelector("#fetchPokemon");
 const newButton = document.querySelector("#newPokemon");
+
 class Pokemon {
-    constructor(name, height, weight, abilities, moves) {
+    constructor(name, height, weight, abilities, moves, types) {
         this.id = 900;
         this.name = name;
         this.height = height;
         this.weight = weight;
         this.abilities = abilities;
         this.moves = moves;
+        this.types = types;
     }
 }
 
@@ -20,9 +22,14 @@ newButton.addEventListener("click", () => {
     let newPokemon = new Pokemon(
         pokeName,
         pokeHeight,
-        pokeWeight, ["eat", "sleep"], ["study", "game"]
+        pokeWeight, ["eat", "sleep"], ["study", "game"],
+
+        [{
+            type: {
+                name: "normal",
+            },
+        }, ]
     );
-    console.log(newPokemon);
     populatePokeCard(newPokemon);
 });
 
@@ -32,7 +39,6 @@ loadButton.addEventListener("click", () => {
 
 fetchButton.addEventListener("click", () => {
     let pokeNameOrId = prompt("Enter Pokemon ID or Name:");
-    console.log(pokeNameOrId);
     getAPIData(`https://pokeapi.co/api/v2/pokemon/${pokeNameOrId}`).then((data) =>
         populatePokeCard(data)
     );
@@ -62,7 +68,6 @@ function loadPage() {
 }
 
 function populatePokeCard(singlePokemon) {
-    // console.log(singlePokemon);
     let pokeScene = document.createElement("div");
     pokeScene.className = "scene";
     let pokeCard = document.createElement("div");
@@ -78,7 +83,6 @@ function populatePokeCard(singlePokemon) {
 }
 
 function populateCardFront(pokemon) {
-    console.log(pokemon);
     let pokeFront = document.createElement("div");
     pokeFront.className = "card__face card__face--front";
     let frontLabel = document.createElement("p");
@@ -86,8 +90,8 @@ function populateCardFront(pokemon) {
     let frontImage = document.createElement("img");
     frontImage.src = getImageFileName(pokemon);
 
-    let pokeType = pokemon.types[0].type.name
-    pokeFront.classList.add(pokeType)
+    let pokeType = pokemon.type[0].type.name;
+    pokeFront.classList.add(pokeType);
 
     pokeFront.appendChild(frontLabel);
     pokeFront.appendChild(frontImage);
@@ -101,18 +105,13 @@ function populateCardBack(pokemon) {
     backLabel.textContent = `Moves: ${pokemon.moves.length}`;
     pokeBack.appendChild(backLabel);
 
-
-
     pokemon.types.forEach((pokeType) => {
         let backType = document.createElement("p");
-        backType.textContent = pokeType.type.name
+        backType.textContent = pokeType.type.name;
         pokeBack.appendChild(backType);
-    })
-    return pokeBack
-
+    });
+    return pokeBack;
 }
-
-
 
 function getImageFileName(pokemon) {
     let pokeId;
