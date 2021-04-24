@@ -6,7 +6,7 @@ const congressGrid = document.querySelector(".congressGrid");
 const seniorityButton = document.querySelector("#seniorityButton");
 const birthdayButton = document.querySelector("#birthdayButton");
 const missedVotesButton = document.querySelector('#missedVotes')
-    //const partyHackButton = document.querySelector('#partyHack')
+const partyHackButton = document.querySelector('#partyHack')
 
 seniorityButton.addEventListener("click", () => {
     senioritySort();
@@ -22,9 +22,11 @@ missedVotesButton.addEventListener('click', () => {
 
 })
 
-//partyHackButton.addEventListener('click', () => //) {
-//alert(partyHack)
-//}
+partyHackButton.addEventListener('click', () => {
+    alert(`There are ${partyHackArray.length} representatives who vote with their 
+    party ${partyHack.votes_with_party_pct}% of the time!`)
+
+})
 
 
 function populateCongressGrid(simplePeople) {
@@ -86,5 +88,9 @@ const missedVotesRep = getSimplifiedCongress(representatives).filter((rep) => re
 
 const partyHack = getSimplifiedCongress(representatives).filter((rep) => rep.title ===
     'Representative').reduce((acc, rep) => acc.votes_with_party_pct > rep.votes_with_party_pct ? acc : rep)
+
+const partyHackArray = getSimplifiedCongress(representatives).filter((person) => {
+    return person.votes_with_party_pct === partyHack.votes_with_party_pct
+})
 
 populateCongressGrid(getSimplifiedCongress(senators))
