@@ -4,7 +4,7 @@ const fetchButton = document.querySelector("#fetchPokemon");
 const newButton = document.querySelector("#newPokemon");
 class Pokemon {
     constructor(name, height, weight, abilities, moves) {
-        this.id = 900
+        this.id = 900;
         this.name = name;
         this.height = height;
         this.weight = weight;
@@ -20,18 +20,18 @@ newButton.addEventListener("click", () => {
     let newPokemon = new Pokemon(
         pokeName,
         pokeHeight,
-        pokeWeight, ["eat", "sleep"], ["study", "game"],
+        pokeWeight, ["eat", "sleep"], ["study", "game"]
     );
-    console.log(newPokemon)
-    populatePokeCard(newPokemon)
+    console.log(newPokemon);
+    populatePokeCard(newPokemon);
 });
 
-loadButton.addEventListener('click', () => {
-    loadPage()
-})
+loadButton.addEventListener("click", () => {
+    loadPage();
+});
 
 fetchButton.addEventListener("click", () => {
-    let pokeNameOrId = prompt("Enter Pokemon ID or Name:")
+    let pokeNameOrId = prompt("Enter Pokemon ID or Name:");
     console.log(pokeNameOrId);
     getAPIData(`https://pokeapi.co/api/v2/pokemon/${pokeNameOrId}`).then((data) =>
         populatePokeCard(data)
@@ -50,7 +50,7 @@ async function getAPIData(url) {
 }
 
 function loadPage() {
-    getAPIData(`https://pokeapi.co/api/v2/pokemon?limit=25&offset=600`).then(
+    getAPIData(`https://pokeapi.co/api/v2/pokemon?limit=25&offset=50`).then(
         async(data) => {
             for (const singlePokemon of data.results) {
                 await getAPIData(singlePokemon.url).then((pokeData) =>
@@ -86,6 +86,9 @@ function populateCardFront(pokemon) {
     let frontImage = document.createElement("img");
     frontImage.src = getImageFileName(pokemon);
 
+    let pokeType = pokemon.types[0].type.name
+    pokeFront.classList.add(pokeType)
+
     pokeFront.appendChild(frontLabel);
     pokeFront.appendChild(frontImage);
     return pokeFront;
@@ -97,8 +100,19 @@ function populateCardBack(pokemon) {
     let backLabel = document.createElement("p");
     backLabel.textContent = `Moves: ${pokemon.moves.length}`;
     pokeBack.appendChild(backLabel);
-    return pokeBack;
+
+
+
+    pokemon.types.forEach((pokeType) => {
+        let backType = document.createElement("p");
+        backType.textContent = pokeType.type.name
+        pokeBack.appendChild(backType);
+    })
+    return pokeBack
+
 }
+
+
 
 function getImageFileName(pokemon) {
     let pokeId;
@@ -106,7 +120,7 @@ function getImageFileName(pokemon) {
     if (pokemon.id > 9 && pokemon.id < 100) pokeId = `0${pokemon.id}`;
     if (pokemon.id > 99 && pokemon.id < 810) pokeId = pokemon.id;
     if (pokemon.id === 900) {
-        return `images/pokeballs.png`
+        return `images/pokeballs.png`;
     }
     return `https://raw.githubusercontent.com/fanzeyi/pokemon.json/master/images/${pokeId}.png`;
 }
