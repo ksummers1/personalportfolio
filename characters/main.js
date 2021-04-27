@@ -1,27 +1,30 @@
 import { people } from '../data/people.js'
 import { getLastNumber, removeChildren } from '../utils/index.js'
 
+const starGrid = document.querySelector('.starGrid')
+const maleButton = document.querySelector('#maleButton')
+const femaleButton = document.querySelector('#femaleButton')
+const otherButton = document.querySelector('#otherButton')
 
 const mainElement = document.querySelector('#main')
-
 const mainHeader = document.createElement('header')
 
 document.body.insertBefore(mainHeader, mainElement)
 
-const maleButton = document.createElement('button')
-maleButton.textContent = 'Male Characters'
+//const maleButton = document.createElement('button')
+//maleButton.textContent = 'Male Characters'
 mainHeader.appendChild(maleButton)
 
 maleButton.addEventListener('click', () => populateDOM(maleCharacters))
 
-const femaleButton = document.createElement('button')
-femaleButton.textContent = 'Female Characters'
+//const femaleButton = document.createElement('button')
+//femaleButton.textContent = 'Female Characters'
 mainHeader.appendChild(femaleButton)
 
 femaleButton.addEventListener('click', () => populateDOM(femaleCharacters))
 
-const otherButton = document.createElement('button')
-otherButton.textContent = 'Other Characters'
+//const otherButton = document.createElement('button')
+//otherButton.textContent = 'Other Characters'
 mainHeader.appendChild(otherButton)
 
 otherButton.addEventListener('click', () => populateDOM(otherCharacters))
@@ -48,6 +51,7 @@ function populateDOM(characters) {
 
         charFigure.appendChild(charImg)
         charFigure.appendChild(charCaption)
+
 
 
         mainElement.appendChild(charFigure)
