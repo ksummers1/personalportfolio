@@ -73,7 +73,7 @@ async function getAPIData(url) {
 }
 
 function loadPage() {
-    getAPIData(`https://pokeapi.co/api/v2/pokemon?limit=25&offset=50`).then(
+    getAPIData(`https://pokeapi.co/api/v2/pokemon?limit=25&offset=150`).then(
         async(data) => {
             for (const singlePokemon of data.results) {
                 await getAPIData(singlePokemon.url).then((pokeData) =>
@@ -106,6 +106,11 @@ function populateCardFront(pokemon) {
     frontLabel.textContent = pokemon.name;
     let frontImage = document.createElement("img");
     frontImage.src = getImageFileName(pokemon);
+
+    frontImage.addEventListener('error', (err) => {
+        console.log(`Broken image: ${err}`)
+        frontImage.src = 'images/pokeball2.jpeg'
+    })
 
     let pokeType = pokemon.types[0].type.name;
     pokeFront.classList.add(pokeType);
@@ -146,7 +151,7 @@ function getImageFileName(pokemon) {
     if (pokemon.id > 9 && pokemon.id < 100) pokeId = `0${pokemon.id}`;
     if (pokemon.id > 99 && pokemon.id < 810) pokeId = pokemon.id;
     if (pokemon.id === 900) {
-        return `images/pokeballs.png`;
+        return `images/pokeball copy.jpeg`;
     }
     return `https://raw.githubusercontent.com/fanzeyi/pokemon.json/master/images/${pokeId}.png`;
 }
