@@ -104,3 +104,35 @@ h1 {
     width: 195px;
     text-align: center;
 }
+
+.fire {
+    background-image: linear-gradient(red, yellow);
+}
+
+.water {
+    background-image: linear-gradient(blue, purple);
+}
+
+.normal {
+    background-image: linear-gradient(lime, orange);
+}
+
+.ground {
+    background-image: linear-gradient(grey, pink);
+}
+
+.fighting {
+    background-image: linear-gradient(darkred, darkmagenta);
+}
+
+.psychic {
+    background-image: linear-gradient(turquoise, green);
+}
+
+.grass {
+    background-image: linear-gradient(darkgreen, navy);
+}
+
+.rock {
+    background-image: linear-gradient(black, grey);
+}
