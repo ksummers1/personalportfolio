@@ -1,32 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
 
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="style.css" rel="stylesheet" />
+    <title>The People in Congress</title>
+
+</head>
+
 <body background="congresspic.jpeg">
+    <header>
+        <h1>People in Congress</h1>
 
-    <head>
-        <meta charset="UTF-8" />
-        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <link href="style.css" rel="stylesheet" />
-        <title>The People in Congress</title>
+        <button id="seniorityButton" class="button is-primary">Sort by Seniority</button>
+        <button id="birthdayButton" class="button is-primary">Sort by Birthday</button>
+        <button id="missedVotes" class="button is-primary">Highest Missed Votes</button>
+        <button id="partyHack" class="button is-primary">Highest Votes with Party</button>
 
-    </head>
+    </header>
+    <main>
+        <div class="congressGrid"></div>
+    </main>
 
-    <body>
-        <header>
-            <h1>People in Congress</h1>
-            <div id="buttonHeader">
-                <button id="seniorityButton">Sort by Seniority</button>
-                <button id="birthdayButton">Sort by Birthday</button>
-                <button id="missedVotes">Highest Missed Votes</button>
-                <button id="partyHack">Highest Votes with Party</button>
-
-            </div>
-        </header>
-        <main>
-            <div class="congressGrid"></div>
-        </main>
-        <script src="congress.js" type="module"></script>
-    </body>
+    <script src="congress.js" type="module"></script>
+</body>
 
 </html>
