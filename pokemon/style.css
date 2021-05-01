@@ -5,9 +5,10 @@
 }
 
 h1 {
-    color: white;
+    color: orangered;
     -webkit-text-stroke-width: 1px;
-    -webkit-text-stroke-color: black;
+    -webkit-text-stroke-color: white;
+    text-align: center;
 }
 
 .pokeGrid {
@@ -57,7 +58,7 @@ h1 {
     text-align: center;
     display: inline-block;
     font-size: 16px;
-    margin: 4px 2px;
+    margin: auto;
     border-radius: 8px;
 }
 
@@ -110,11 +111,11 @@ h1 {
 }
 
 .water {
-    background-image: linear-gradient(blue, purple);
+    background-image: linear-gradient(turquoise, green);
 }
 
 .normal {
-    background-image: linear-gradient(lime, orange);
+    background-image: linear-gradient(blue, purple);
 }
 
 .ground {
@@ -126,7 +127,7 @@ h1 {
 }
 
 .psychic {
-    background-image: linear-gradient(turquoise, green);
+    background-image: linear-gradient(lime, orange);
 }
 
 .grass {
@@ -135,4 +136,20 @@ h1 {
 
 .rock {
     background-image: linear-gradient(black, grey);
+}
+
+.bug {
+    background-image: linear-gradient(brown, darkgreen);
+}
+
+.fairy {
+    background-image: linear-gradient(#b76cfd, #ff2079);
+}
+
+.electric {
+    background-image: linear-gradient(#fcf340, #7fff00);
+}
+
+.poison {
+    background-image: linear-gradient(#00ffee, #d0b4dc);
 }

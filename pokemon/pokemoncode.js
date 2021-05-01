@@ -24,8 +24,7 @@ newButton.addEventListener("click", () => {
     let newPokemon = new Pokemon(
         pokeName,
         80,
-        3000,
-        abilitiesArray, ['study', 'game'],
+        3000, ['foo', 'bar'], ['study', 'game'],
 
         [{
             type: {
@@ -39,10 +38,6 @@ newButton.addEventListener("click", () => {
     populatePokeCard(newPokemon);
 });
 
-loadButton.addEventListener("click", () => {
-    loadPage();
-});
-
 function getAbilitiesArray(commaString) {
     let tempArray = commaString.split(',')
     return tempArray.map((abilityName) => {
@@ -53,6 +48,10 @@ function getAbilitiesArray(commaString) {
         }
     })
 }
+
+loadButton.addEventListener("click", () => {
+    loadPage();
+});
 
 fetchButton.addEventListener("click", () => {
     let pokeNameOrId = prompt("Enter Pokemon ID or Name:");
@@ -109,7 +108,7 @@ function populateCardFront(pokemon) {
 
     frontImage.addEventListener('error', (err) => {
         console.log(`Broken image: ${err}`)
-        frontImage.src = 'images/pokeball2.jpeg'
+        frontImage.src = 'images/pokeball3.jpeg'
     })
 
     let pokeType = pokemon.types[0].type.name;
@@ -125,14 +124,17 @@ function populateCardBack(pokemon) {
     pokeBack.className = "card__face card__face--back";
     let backLabel = document.createElement("p");
     backLabel.textContent = `Moves: ${pokemon.moves.length}`;
+    let backType = document.createElement('p')
+    backType.textContent = `Types: ${pokemon.types.length}`
     pokeBack.appendChild(backLabel);
+    pokeBack.appendChild(backType)
 
-    pokemon.types.forEach((pokeType) => {
-        let backType = document.createElement("p");
-        backType.textContent = pokeType.type.name;
-        pokeBack.appendChild(backType);
+    //pokemon.types.forEach((pokeType) => {
+    //let backType = document.createElement("p");
+    //backType.textContent = pokeType.type.name;
+    //pokeBack.appendChild(backType);
 
-    });
+    //});
     let abilityLabel = document.createElement('h3')
     abilityLabel.textContent = "Abilities:"
     pokeBack.appendChild(abilityLabel)
@@ -151,7 +153,7 @@ function getImageFileName(pokemon) {
     if (pokemon.id > 9 && pokemon.id < 100) pokeId = `0${pokemon.id}`;
     if (pokemon.id > 99 && pokemon.id < 810) pokeId = pokemon.id;
     if (pokemon.id === 900) {
-        return `images/pokeball copy.jpeg`;
+        return `images/pokeball2.jpeg`;
     }
     return `https://raw.githubusercontent.com/fanzeyi/pokemon.json/master/images/${pokeId}.png`;
 }
