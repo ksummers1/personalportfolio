@@ -107,7 +107,7 @@ function populateCardFront(pokemon) {
 
     frontImage.addEventListener('error', (err) => {
         console.log(`Broken image: ${err}`)
-        frontImage.src = 'images/pokeball3.jpeg'
+        frontImage.src = 'images/clipart1908923.png'
     })
 
     let pokeType = pokemon.types[0].type.name;
@@ -126,7 +126,7 @@ function populateCardBack(pokemon) {
     //let backType = document.createElement('p')
     //backType.textContent = "Types:"
     let backImage = document.createElement('img')
-    backImage.src = 'images/pokeballs.png'
+    backImage.src = 'images/pngkite-32965.png'
     pokeBack.appendChild(backLabel);
     pokeBack.appendChild(backImage)
 
@@ -158,7 +158,7 @@ function getImageFileName(pokemon) {
     if (pokemon.id > 9 && pokemon.id < 100) pokeId = `0${pokemon.id}`;
     if (pokemon.id > 99 && pokemon.id < 810) pokeId = pokemon.id;
     if (pokemon.id === 900) {
-        return `images/pokeball2.jpeg`;
+        return `images/pngaaa.com-450971.png`;
     }
     return `https://raw.githubusercontent.com/fanzeyi/pokemon.json/master/images/${pokeId}.png`
 }
