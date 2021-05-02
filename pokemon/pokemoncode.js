@@ -21,20 +21,19 @@ newButton.addEventListener("click", () => {
     //let pokeWeight = prompt("Pokemon weight?");
     let pokeAbilities = prompt('What are your Pokemon abilities? (use a comma separated list)')
     let abilitiesArray = getAbilitiesArray(pokeAbilities)
+
     let newPokemon = new Pokemon(
         pokeName,
-        80,
-        3000, ['foo', 'bar'], ['study', 'game'],
+        48,
+        232,
+        abilitiesArray, ['study', 'game'], [{
 
-        [{
             type: {
                 name: "normal",
             }
 
         }]
-
     )
-
     populatePokeCard(newPokemon);
 });
 
@@ -72,7 +71,7 @@ async function getAPIData(url) {
 }
 
 function loadPage() {
-    getAPIData(`https://pokeapi.co/api/v2/pokemon?limit=25&offset=150`).then(
+    getAPIData(`https://pokeapi.co/api/v2/pokemon?limit=25&offset=50`).then(
         async(data) => {
             for (const singlePokemon of data.results) {
                 await getAPIData(singlePokemon.url).then((pokeData) =>
@@ -114,7 +113,6 @@ function populateCardFront(pokemon) {
     let pokeType = pokemon.types[0].type.name;
     pokeFront.classList.add(pokeType);
 
-
     pokeFront.appendChild(frontLabel);
     pokeFront.appendChild(frontImage);
     return pokeFront;
@@ -125,22 +123,24 @@ function populateCardBack(pokemon) {
     pokeBack.className = "card__face card__face--back";
     let backLabel = document.createElement("p");
     backLabel.textContent = `Moves: ${pokemon.moves.length}`;
-    let backType = document.createElement('p')
-    backType.textContent = "Types:"
+    //let backType = document.createElement('p')
+    //backType.textContent = "Types:"
     let backImage = document.createElement('img')
     backImage.src = 'images/pokeballs.png'
-
     pokeBack.appendChild(backLabel);
-    pokeBack.appendChild(backType)
     pokeBack.appendChild(backImage)
+
+    let typeLabel = document.createElement('h3')
+    typeLabel.textContent = "Types:"
+    pokeBack.appendChild(typeLabel)
+
 
     pokemon.types.forEach((pokeType) => {
         let backType = document.createElement("p");
         backType.textContent = pokeType.type.name;
         pokeBack.appendChild(backType);
-    });
-
-    let abilityLabel = document.createElement('p')
+    })
+    let abilityLabel = document.createElement('h3')
     abilityLabel.textContent = "Abilities:"
     pokeBack.appendChild(abilityLabel)
     pokemon.abilities.forEach((pokeAbility) => {
@@ -160,5 +160,5 @@ function getImageFileName(pokemon) {
     if (pokemon.id === 900) {
         return `images/pokeball2.jpeg`;
     }
-    return `https://raw.githubusercontent.com/fanzeyi/pokemon.json/master/images/${pokeId}.png`;
+    return `https://raw.githubusercontent.com/fanzeyi/pokemon.json/master/images/${pokeId}.png`
 }

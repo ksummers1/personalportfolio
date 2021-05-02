@@ -54,7 +54,7 @@ p {
     justify-content: center;
     align-items: center;
     background-color: #a3c586;
-    color: white;
+    color: black;
     width: 100%;
     height: 100vh;
 }
@@ -126,7 +126,7 @@ footer {
     flex-direction: row;
     padding: 4px;
     margin: 4px;
-    border: 3px red solid;
+    border: 3px blue solid;
     height: 11em;
     width: 5;
 }

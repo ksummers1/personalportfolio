@@ -9,6 +9,7 @@ h1 {
     -webkit-text-stroke-width: .4px;
     -webkit-text-stroke-color: whitesmoke;
     text-align: center;
+    font-size: 48px;
 }
 
 .pokeGrid {
@@ -30,7 +31,7 @@ h1 {
     margin: 10px 50px;
     position: relative;
     top: 80%;
-    left: 40%;
+    left: 32%;
 }
 
 .card {
@@ -63,6 +64,7 @@ h1 {
     color: white;
     background-color: lightseagreen;
     height: 3em;
+    width: 10em;
     padding: 6px;
     text-align: center;
     display: inline-block;
@@ -75,6 +77,7 @@ h1 {
     color: white;
     background-color: darkorange;
     height: 3em;
+    width: 10em;
     padding: 6px;
     text-align: center;
     display: inline-block;
@@ -87,6 +90,7 @@ h1 {
     color: white;
     background-color: darkorchid;
     height: 3em;
+    width: 10em;
     padding: 6px;
     text-align: center;
     display: inline-block;
