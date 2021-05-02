@@ -15,6 +15,7 @@ h1 {
     -webkit-text-stroke-color: darkred;
     text-align: center;
     font-size: 48px;
+    font-family: cursive;
 }
 
 .button {

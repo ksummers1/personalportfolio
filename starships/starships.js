@@ -9,7 +9,7 @@ const shipView = document.querySelector('.shipView')
 
 const dialog = document.querySelector('.modal')
 const closeButton = document.querySelector('.modal-close')
-const modadldBackground = document.querySelector('.modal-background')
+const modalBackground = document.querySelector('.modal-background')
 
 
 closeButton.addEventListener('click', () => {
@@ -48,16 +48,13 @@ function populateShipView(shipData) {
     shipView.appendChild(shipImage)
 }
 
-
-
-
 function addStarField(element, numStars) {
     element.style.setProperty('background-color', 'black')
     for (let i = 0; i < numStars; i++) {
         let star = document.createElement('div')
         star.style.setProperty('position', 'absolute')
-        star.style.setProperty('width', '2px')
-        star.style.setProperty('height', '2px')
+        star.style.setProperty('width', '3px')
+        star.style.setProperty('height', '3px')
         star.style.setProperty('background-color', 'white')
         let xy = getRandomPosition()
         star.style.left = `${xy[0]}px`
