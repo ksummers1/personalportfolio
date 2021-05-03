@@ -104,8 +104,10 @@ h1 {
     background: indigo;
     height: 255px;
     width: 195px;
-    -webkit-text-stroke: .5px black;
+    -webkit-text-stroke: .75px black;
     -webkit-text-fill-color: white;
+    font-family: monospace;
+    font-size: 20px;
 }
 
 .card__face--front img {
@@ -191,5 +193,5 @@ h1 {
 }
 
 .ghost {
-    background-image: linear-gradient(white, grey);
+    background-image: linear-gradient(darkgrey, white);
 }
