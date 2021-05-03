@@ -11,10 +11,10 @@ body {
 
 h1 {
     color: black;
-    -webkit-text-stroke-width: 1.25px;
+    -webkit-text-stroke-width: .25px;
     -webkit-text-stroke-color: darkred;
     text-align: center;
-    font-size: 48px;
+    font-size: 58px;
     font-family: cursive;
 }
 
@@ -29,7 +29,7 @@ h1 {
 
 #seniorityButton {
     color: darkblue;
-    background-color: darkred;
+    background-color: red;
     height: 3em;
     padding: 6px;
     text-align: center;
@@ -43,7 +43,7 @@ h1 {
 
 #birthdayButton {
     color: darkblue;
-    background-color: darkred;
+    background-color: red;
     height: 3em;
     padding: 6px;
     text-align: center;
@@ -57,7 +57,7 @@ h1 {
 
 #missedVotes {
     color: darkblue;
-    background-color: darkred;
+    background-color: red;
     height: 3em;
     padding: 6px;
     text-align: center;
@@ -71,7 +71,7 @@ h1 {
 
 #partyHack {
     color: darkblue;
-    background-color: darkred;
+    background-color: red;
     -webkit-text-stroke-color: black;
     -webkit-text-stroke-width: .75px;
     height: 3em;

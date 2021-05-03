@@ -71,7 +71,7 @@ async function getAPIData(url) {
 }
 
 function loadPage() {
-    getAPIData(`https://pokeapi.co/api/v2/pokemon?limit=25&offset=175`).then(
+    getAPIData(`https://pokeapi.co/api/v2/pokemon?limit=30&offset=175`).then(
         async(data) => {
             for (const singlePokemon of data.results) {
                 await getAPIData(singlePokemon.url).then((pokeData) =>
