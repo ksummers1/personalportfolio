@@ -10,6 +10,7 @@ h1 {
     -webkit-text-stroke-color: white;
     text-align: center;
     font-size: 48px;
+    font-family: monospace;
 }
 
 .pokeGrid {
@@ -103,6 +104,8 @@ h1 {
     background: indigo;
     height: 255px;
     width: 195px;
+    -webkit-text-stroke: .5px black;
+    -webkit-text-fill-color: white;
 }
 
 .card__face--front img {
@@ -117,6 +120,8 @@ h1 {
     height: 250px;
     width: 195px;
     text-align: center;
+    -webkit-text-stroke: .5px black;
+    -webkit-text-fill-color: white;
 }
 
 .card__face--back img {
@@ -179,4 +184,12 @@ h1 {
 
 .poison {
     background-image: linear-gradient(#00ffee, #d0b4dc);
+}
+
+.dark {
+    background-image: linear-gradient(magenta, orchid);
+}
+
+.ghost {
+    background-image: linear-gradient(white, grey);
 }
