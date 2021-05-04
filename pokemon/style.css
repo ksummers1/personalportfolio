@@ -4,6 +4,10 @@
     box-sizing: border-box;
 }
 
+body {
+    background-repeat: no-repeat;
+}
+
 h1 {
     color: darkred;
     -webkit-text-stroke-width: .75px;
