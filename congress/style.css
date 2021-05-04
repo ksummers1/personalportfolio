@@ -91,7 +91,7 @@ h1 {
 .figureDiv {
     padding: 8px;
     margin: 8px;
-    border: .5px red solid;
+    border: 2px red solid;
     box-shadow: 3px 3px 3px black;
 }
 
@@ -99,4 +99,5 @@ figure {
     width: 100px;
     -webkit-font-smoothing: antialiased;
     background-color: grey;
+    text-align: center;
 }
