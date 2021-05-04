@@ -32,6 +32,8 @@ h1 {
     font-weight: 700;
     font-size: 48px;
     font-family: fantasy;
+    -webkit-text-stroke-width: .25px;
+    -webkit-text-stroke-color: yellow;
 }
 
 a {
